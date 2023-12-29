@@ -1,0 +1,360 @@
+print("Merhaba efendim, çevrim içi analiz hesaplayıcıya hoşgeldin")
+import matplotlib.pyplot as plt
+def koi_hesapla(bod5, cod):
+    koi = cod * 1.47 - bod5
+    return koi
+
+def grafik_ciz(x, y, grafik_turu):
+
+    if grafik_turu == "sutun":
+        plt.bar(5, 20)
+    elif grafik_turu == "cizgi":
+        plt.plot(5, 20)
+    else:
+        print("Geçersiz grafik türü. Lütfen 'sutun' veya 'cizgi' girin.")
+    plt.show()
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("1,2,3,4,5")
+plt.ylabel("10,12,20,5,8")
+plt.title("COD Zaman grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='blue')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+baslik = "cod zaman sütun grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "cod(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+def bod5_hesapla(do_giren, do_cıkan, seyreltme_faktoru=1):
+    bod5 = (do_giren - do_cıkan) * seyreltme_faktoru
+    return bod5
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("1,2,3,4,5")
+plt.ylabel("10,12,20,5,8")
+plt.title("BOD5 Zaman grafiği")
+plt.plot(x,y)
+plt.show()
+
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='blue')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "bod5 zaman sütun grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "bod5(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def sulfate_analysis(A, B, N, F, V):
+    result = ((A - B) * N * F) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("1,2,3,4,5")
+plt.ylabel("10,12,20,5,8")
+plt.title("Sülfat Konsantrasyon grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='blue')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "Sülfat Konsantrasyon sütun grafiği"
+x_etiket = "konsantrasyon(mg/L)"
+y_etiket = "absorbans(abs)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def chloride_analysis(A, B, N, V):
+    result = ((A-B) * N * 35.45 * 1000) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("klorür tayin grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='blue')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "klorür tayin grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "konsantrasyon(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def ammonium_nitrogen_analysis(V1, N1, F, V2, N2, V):
+    result = ((V1 * N1 * F * 14.01) - (V2 * N2 * 14.01)) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("amonyum azotu grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='orange')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "amonyum azotu grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "Amonyum Azotu (mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def phosphate_phosphorus_analysis(V1, N1, F, V2, N2, V):
+    result = ((V1 * N1 * F * 30.97) - (V2 * N2 * 30.97)) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Fosfat-Fosfor Tayini Sonucu")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='red')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "Fosfat-Fosfor Tayini Sonucu grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "Fosfor İçeriği(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def total_alkalinity_analysis(V1, N1, F, V2, N2, V):
+    result = ((V1 * N1 * F * 61.02) - (V2 * N2 * 61.02)) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("toplam alkalinite grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='green')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "Toplam Alkalinite Tayini Sonucu grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "Toplam Alkalinite(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def total_acidity_analysis(V1, N1, F, V2, N2, V):
+    result = ((V1 * N1 * F * 61.02) - (V2 * N2 * 61.02)) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("toplam asidite grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='yellow')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "Toplam Asidite Tayini Sonucu grafiği"
+x_etiket = "zaman(gün)"
+y_etiket = "Toplam Asidite(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def total_hardness_analysis(A, B, V):
+    result = (A * B * 1000) / V
+    return result
+
+x = [1, 2, 3, 4, 5]
+y = [10, 12, 20, 5, 8]
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("toplam sertlik grafiği")
+plt.plot(x,y)
+plt.show()
+
+def sutun_grafigi_ciz(x_values, y_values, baslik, x_etiket, y_etiket):
+    plt.bar(x_values, y_values, color='lime')
+    plt.xlabel(x_etiket)
+    plt.ylabel(y_etiket)
+    plt.title(baslik)
+    plt.show()
+
+baslik = "Toplam Sertlik Tayini Sonucu"
+x_etiket = "zaman(gün)"
+y_etiket = "Toplam Sertlik(mg/L)"
+
+sutun_grafigi_ciz(x, y, baslik, x_etiket, y_etiket)
+
+
+def birim_donustur(miktar, birim, hedef_birim):
+    birimler = {"mg/L": 1, "kg/m^3": 0.001, "t/m^3": 0.0000001, "g/m^3": 1}
+    donusturulen_miktar = miktar * birimler[birim] / birimler[hedef_birim]
+    return donusturulen_miktar
+
+
+def main():
+    print("1. Analiz Hesapla")
+    print("2. Birim Dönüştür")
+    print("3. Grafik Çiz")
+    secim = int(input("Yapmak istediğiniz işlemi seçin (1/2/3): "))
+
+    if secim == 1:
+      print("Aşağıdaki parametrelerden birini seçiniz.")
+      print("cod\nbod5\nsulfate_analysis\nchloride_analysis\nammonium_nitrogen_analysis\nphosphate_phosphorus_analysis\ntotal_alkalinity_analysis\ntotal_acidity_analysis\ntotal_hardness_analysis")
+      secim1=input("işlem yapmak istediğiniz parametreyi giriniz:")
+      if secim1=="cod":
+        bod5 = float(input("BOD5 değerini girin (mg/L): "))
+        cod = float(input("COD değerini girin (mg/L): "))
+        koi_sonuc = koi_hesapla(bod5, cod)
+        print(f"KOİ Sonucu: {koi_sonuc} mg/L")
+
+      if secim1=="bod5":
+        do_giren = float(input("do_giren değerini girin (mg/L): "))
+        do_cıkan = float(input("do_cıkan değerini girin (mg/L): "))
+        seyreltme_faktoru = do_cıkan / do_giren
+        bod5_sonuc = bod5_hesapla(do_giren, do_cıkan)
+        print(f"bod5 Sonucu: {bod5_sonuc} mg/L")
+
+      if secim1=="sulfate_analysis":
+        A = float(input("Analiz sonrası çözeltinin ağırlığını girin (g): "))
+        B = float(input("Boş çanak ağırlığını girin (g): "))
+        N = float(input("Normaliteyi girin: "))
+        V = float(input("Analiz için alınan örnek hacmini girin (L): "))
+        F = 1
+        result = sulfate_analysis(A, B, N, F, V)
+        print("Sülfat İçeriği (mg/L):", result)
+
+      if secim1=="chloride_analysis":
+        A = float(input(" numune için ml sarfiyat değerini girin (mL): "))
+        B = float(input(" şahit numune için ml sarfiyatı değerini girin (ml): "))
+        N = float(input(" gümüş nitrat çözeltisinin normalitesini girin (N): "))
+        V = float(input(" analiz için alınan örnek hacmini girin (L): "))
+        result = chloride_analysis(A, B, N, V)
+        print("Klorür İçeriği (mg/L):", result)
+
+      if secim1=="ammonium_nitrogen_analysis":
+        V1 = float(input("Kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N1 = float(input("Kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V = float(input("Analiz için alınan örnek hacmini girin (L): "))
+        F = 1
+        result = ammonium_nitrogen_analysis(V1, N1, F, V2, N2, V)
+        print("Amonyum Azotu (mg/L):", result)
+
+      if secim1=="phosphate_phosphorus_analysis":
+        V1 = float(input("Kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N1 = float(input("Kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V = float(input("Analiz için alınan örnek hacmini girin (L): "))
+        F = 1
+        result = phosphate_phosphorus_analysis(V1, N1, F, V2, N2, V)
+        print("Fosfor İçeriği (mg/L):", result)
+
+      if secim1=="total_alkalinity_analysis":
+        V1 = float(input("Kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N1 = float(input("Kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V = float(input("Analiz için alınan örnek hacmini girin (L): "))
+        F = 2
+        result = total_alkalinity_analysis(V1, N1, F, V2, N2, V)
+        print("Toplam Alkalinite (mg/L):", result)
+
+      if secim1=="total_acidity_analysis":
+        V1 = float(input("Kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N1 = float(input("Kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin hacmini girin (mL): "))
+        N2 = float(input("Boş deneme titrasyonunda kullanılan titrasyon çözeltisinin normalitesini girin: "))
+        V = float(input("Analiz için alınan örnek hacmini girin (L): "))
+        F = 2
+        result = total_acidity_analysis(V1, N1, F, V2, N2, V)
+        print("Toplam Asidite (mg/L):", result)
+
+      if secim1=="total_hardness_analysis":
+        A = float(input(" EDTA sarfiyatı ml cinsinden değerini girin (mL): "))
+        B = 1
+        V = float(input(" analiz için alınan örnek hacmini girin (mL): "))
+        result = total_hardness_analysis(A, B, V)
+        print("Sertlik (mg/L):", result)
+
+
+    if secim == 2:
+        miktar = float(input("Miktarı girin: "))
+        birim = input("Miktar birimini girin (örn., mg/L): ")
+        hedef_birim = input("Hedef birimi girin (örn., kg/m^3, t/m^3, g/m^3): ")
+        donusturulen_miktar = birim_donustur(miktar, birim, hedef_birim)
+        print(f"Dönüştürülen Miktar: {donusturulen_miktar} {hedef_birim}")
+
+    if secim == 3:
+        x = [1, 2, 3, 4, 5]
+        y = [10, 12, 5, 8, 15]
+        x=float(input("zaman(gün) değerini giriniz:"))
+        y=float(input("parametre(mg/L) değerini giriniz:"))
+        grafik_turu = input("Grafik türünü seçin (sutun/cizgi): ")
+        grafik_ciz(x, y, grafik_turu)
+
+
+if __name__ == "__main__":
+    main()
