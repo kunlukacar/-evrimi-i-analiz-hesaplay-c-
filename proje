@@ -1,3 +1,5 @@
+https://colab.research.google.com/gist/kunlukacar/723a0e00533e65d886ba5226750e5843/untitled0.ipynb
+
 print("Merhaba efendim, çevrim içi analiz hesaplayıcıya hoşgeldin")
 import matplotlib.pyplot as plt
 def koi_hesapla(bod5, cod):
